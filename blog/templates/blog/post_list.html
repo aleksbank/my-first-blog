@@ -3,20 +3,16 @@
         <title>Blog warsztatowy</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">A moze jednak nie inaczej</a></h1>
-        </div>
+		<div>
+		    <h1><a href="/">Django Girls Blog</a></h1>
+		</div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Duzo wody mineralnej</a></h2>
-            <p>Arenum paranelum umorata bola wytwornia wodki koneser na ulicy zabkowskiej na przeciwko mrowka nie siada a dalej katedra i metro.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Po niedzieli jest sobota</a></h2>
-            <p>W sumie powinien byc poniedzialek ale sie wszystko poprzestawialo i rano w kalendarzu ukazal sie piatek</p>
-        </div>
+		{% for post in posts %}
+		    <div>
+		        <p>published: {{ post.published_date }}</p>
+		        <h1><a href="">{{ post.title }}</a></h1>
+		        <p>{{ post.text|linebreaks }}</p>
+		    </div>
+		{% endfor %}
     </body>
 </html>
